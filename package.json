@@ -1,0 +1,24 @@
+{
+  "name": "jengportfolio",
+  "version": "1.0.0",
+  "description": "Interactive Personal IT Portfolio with Private CMS",
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build:client": "cd client && npm run build",
+    "seed": "cd server && npm run prisma:seed",
+    "prisma:generate": "cd server && npm run prisma:generate",
+    "prisma:migrate": "cd server && npm run prisma:migrate"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "vite",
+    "express",
+    "prisma",
+    "postgresql",
+    "cms"
+  ],
+  "author": "",
+  "license": "ISC"
+}

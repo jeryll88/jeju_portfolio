@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(30, 41, 59, 0.9)"/>
+      <stop offset="100%" stop-color="rgba(15, 23, 42, 0.8)"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Tech Grid / Circles -->
+  <g opacity="0.15">
+    <circle cx="700" cy="100" r="180" fill="none" stroke="#38BDF8" stroke-width="2" stroke-dasharray="8 6"/>
+    <circle cx="100" cy="400" r="120" fill="none" stroke="#818CF8" stroke-width="2"/>
+    <path d="M 0 100 L 800 100 M 0 250 L 800 250 M 0 400 L 800 400" stroke="#FFFFFF" stroke-width="0.5"/>
+  </g>
+
+  <!-- Window Frame -->
+  <rect x="60" y="45" width="680" height="410" rx="16" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" filter="url(#glow)"/>
+
+  <!-- Window Top Bar -->
+  <rect x="60" y="45" width="680" height="42" rx="16" fill="rgba(15, 23, 42, 0.7)"/>
+  <rect x="60" y="70" width="680" height="17" fill="rgba(15, 23, 42, 0.7)"/>
+  <line x1="60" y1="87" x2="740" y2="87" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Window Dots -->
+  <circle cx="85" cy="66" r="5" fill="#EF4444"/>
+  <circle cx="103" cy="66" r="5" fill="#F59E0B"/>
+  <circle cx="121" cy="66" r="5" fill="#10B981"/>
+
+  <!-- Window Title -->
+  <text x="400" y="70" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">
+    https://lms-mu-fawn.vercel.app/ — School Library Management System
+  </text>
+
+  <!-- Sidebar -->
+  <rect x="80" y="105" width="130" height="330" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)"/>
+  <rect x="95" y="125" width="100" height="24" rx="6" fill="url(#accentGrad)"/>
+  <text x="145" y="141" fill="#FFFFFF" font-family="system-ui" font-size="11" font-weight="700" text-anchor="middle">📚 LMS Core</text>
+
+  <rect x="95" y="165" width="100" height="18" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <text x="105" y="178" fill="#CBD5E1" font-family="system-ui" font-size="10">Dashboard</text>
+
+  <rect x="95" y="193" width="100" height="18" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <text x="105" y="206" fill="#CBD5E1" font-family="system-ui" font-size="10">Books Catalog</text>
+
+  <rect x="95" y="221" width="100" height="18" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <text x="105" y="234" fill="#CBD5E1" font-family="system-ui" font-size="10">Borrowings</text>
+
+  <rect x="95" y="249" width="100" height="18" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <text x="105" y="262" fill="#CBD5E1" font-family="system-ui" font-size="10">Reservations</text>
+
+  <rect x="95" y="277" width="100" height="18" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <text x="105" y="290" fill="#CBD5E1" font-family="system-ui" font-size="10">Students &amp; Users</text>
+
+  <rect x="95" y="305" width="100" height="18" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <text x="105" y="318" fill="#CBD5E1" font-family="system-ui" font-size="10">Analytics Reports</text>
+
+  <!-- Metric Cards -->
+  <g transform="translate(230, 105)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="150" height="75" rx="10" fill="rgba(59, 130, 246, 0.15)" stroke="#3B82F6" stroke-width="1"/>
+    <text x="15" y="24" fill="#93C5FD" font-family="system-ui" font-size="11" font-weight="500">Total Books</text>
+    <text x="15" y="52" fill="#FFFFFF" font-family="system-ui" font-size="22" font-weight="700">1,248</text>
+    <text x="15" y="66" fill="#6EE7B7" font-family="system-ui" font-size="9">+12 this week</text>
+
+    <!-- Card 2 -->
+    <rect x="170" y="0" width="150" height="75" rx="10" fill="rgba(6, 182, 212, 0.15)" stroke="#06B6D4" stroke-width="1"/>
+    <text x="185" y="24" fill="#67E8F9" font-family="system-ui" font-size="11" font-weight="500">Active Borrowings</text>
+    <text x="185" y="52" fill="#FFFFFF" font-family="system-ui" font-size="22" font-weight="700">177</text>
+    <text x="185" y="66" fill="#FCD34D" font-family="system-ui" font-size="9">14 due today</text>
+
+    <!-- Card 3 -->
+    <rect x="340" y="0" width="150" height="75" rx="10" fill="rgba(168, 85, 247, 0.15)" stroke="#A855F7" stroke-width="1"/>
+    <text x="355" y="24" fill="#D8B4FE" font-family="system-ui" font-size="11" font-weight="500">Active Students</text>
+    <text x="355" y="52" fill="#FFFFFF" font-family="system-ui" font-size="22" font-weight="700">624</text>
+    <text x="355" y="66" fill="#6EE7B7" font-family="system-ui" font-size="9">Registered borrowers</text>
+  </g>
+
+  <!-- Main Table Preview -->
+  <g transform="translate(230, 200)">
+    <rect x="0" y="0" width="490" height="235" rx="10" fill="rgba(15, 23, 42, 0.6)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="20" y="30" fill="#FFFFFF" font-family="system-ui" font-size="14" font-weight="700">Recent Circulation &amp; Borrowing Activity</text>
+
+    <!-- Table Header -->
+    <rect x="15" y="45" width="460" height="26" rx="4" fill="rgba(255,255,255,0.04)"/>
+    <text x="25" y="62" fill="#94A3B8" font-family="system-ui" font-size="10" font-weight="600">BOOK TITLE</text>
+    <text x="180" y="62" fill="#94A3B8" font-family="system-ui" font-size="10" font-weight="600">STUDENT / BORROWER</text>
+    <text x="320" y="62" fill="#94A3B8" font-family="system-ui" font-size="10" font-weight="600">DUE DATE</text>
+    <text x="410" y="62" fill="#94A3B8" font-family="system-ui" font-size="10" font-weight="600">STATUS</text>
+
+    <!-- Row 1 -->
+    <text x="25" y="96" fill="#E2E8F0" font-family="system-ui" font-size="11">Data Structures &amp; Algorithms</text>
+    <text x="180" y="96" fill="#94A3B8" font-family="system-ui" font-size="11">BSIT-3A (Student)</text>
+    <text x="320" y="96" fill="#94A3B8" font-family="system-ui" font-size="11">Nov 28, 2026</text>
+    <rect x="405" y="83" width="60" height="18" rx="9" fill="rgba(16, 185, 129, 0.2)"/>
+    <text x="435" y="96" fill="#34D399" font-family="system-ui" font-size="9" font-weight="600" text-anchor="middle">Active</text>
+
+    <!-- Row 2 -->
+    <text x="25" y="132" fill="#E2E8F0" font-family="system-ui" font-size="11">Database Management Systems</text>
+    <text x="180" y="132" fill="#94A3B8" font-family="system-ui" font-size="11">BSCS-2B (Student)</text>
+    <text x="320" y="132" fill="#94A3B8" font-family="system-ui" font-size="11">Dec 02, 2026</text>
+    <rect x="405" y="119" width="60" height="18" rx="9" fill="rgba(16, 185, 129, 0.2)"/>
+    <text x="435" y="132" fill="#34D399" font-family="system-ui" font-size="9" font-weight="600" text-anchor="middle">Active</text>
+
+    <!-- Row 3 -->
+    <text x="25" y="168" fill="#E2E8F0" font-family="system-ui" font-size="11">Computer Networks &amp; Security</text>
+    <text x="180" y="168" fill="#94A3B8" font-family="system-ui" font-size="11">BSIT-4A (Student)</text>
+    <text x="320" y="168" fill="#94A3B8" font-family="system-ui" font-size="11">Nov 20, 2026</text>
+    <rect x="405" y="155" width="60" height="18" rx="9" fill="rgba(239, 68, 68, 0.2)"/>
+    <text x="435" y="168" fill="#F87171" font-family="system-ui" font-size="9" font-weight="600" text-anchor="middle">Overdue</text>
+
+    <!-- Row 4 -->
+    <text x="25" y="204" fill="#E2E8F0" font-family="system-ui" font-size="11">Modern Full-Stack Web Dev</text>
+    <text x="180" y="204" fill="#94A3B8" font-family="system-ui" font-size="11">BSIT-3B (Student)</text>
+    <text x="320" y="204" fill="#94A3B8" font-family="system-ui" font-size="11">Dec 05, 2026</text>
+    <rect x="405" y="191" width="60" height="18" rx="9" fill="rgba(59, 130, 246, 0.2)"/>
+    <text x="435" y="204" fill="#60A5FA" font-family="system-ui" font-size="9" font-weight="600" text-anchor="middle">Reserved</text>
+  </g>
+</svg>

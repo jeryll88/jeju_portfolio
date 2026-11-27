@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="uaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B132B"/>
+      <stop offset="50%" stop-color="#1C2541"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="uaCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(28, 37, 65, 0.95)"/>
+      <stop offset="100%" stop-color="rgba(11, 19, 43, 0.9)"/>
+    </linearGradient>
+    <linearGradient id="uaAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <filter id="uaGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#uaBg)"/>
+
+  <!-- Academic Background Pattern -->
+  <g opacity="0.12">
+    <circle cx="700" cy="120" r="160" fill="none" stroke="#10B981" stroke-width="2" stroke-dasharray="8 6"/>
+    <circle cx="120" cy="380" r="140" fill="none" stroke="#3B82F6" stroke-width="2"/>
+    <path d="M 0 120 L 800 120 M 0 260 L 800 260 M 0 400 L 800 400" stroke="#FFFFFF" stroke-width="0.5"/>
+  </g>
+
+  <!-- Browser Window Frame -->
+  <rect x="60" y="45" width="680" height="410" rx="16" fill="url(#uaCard)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" filter="url(#uaGlow)"/>
+
+  <!-- Window Top Bar -->
+  <rect x="60" y="45" width="680" height="42" rx="16" fill="rgba(11, 19, 43, 0.85)"/>
+  <rect x="60" y="70" width="680" height="17" fill="rgba(11, 19, 43, 0.85)"/>
+  <line x1="60" y1="87" x2="740" y2="87" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Window Dots -->
+  <circle cx="85" cy="66" r="5" fill="#EF4444"/>
+  <circle cx="103" cy="66" r="5" fill="#F59E0B"/>
+  <circle cx="121" cy="66" r="5" fill="#10B981"/>
+
+  <!-- Window Title -->
+  <text x="400" y="70" fill="#94A3B8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" text-anchor="middle">
+    github.com/jeryll88/ua_webiste — University of Abra Web Portal &amp; CMS
+  </text>
+
+  <!-- Portal Navigation Header -->
+  <g transform="translate(85, 105)">
+    <!-- University Crest / Mark -->
+    <rect x="0" y="0" width="34" height="34" rx="8" fill="#10B981"/>
+    <text x="17" y="23" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="16" font-weight="800" text-anchor="middle">UA</text>
+
+    <text x="44" y="16" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="14" font-weight="700">UNIVERSITY OF ABRA</text>
+    <text x="44" y="28" fill="#10B981" font-family="system-ui, sans-serif" font-size="9" font-weight="600" letter-spacing="1.5">OFFICIAL INSTITUTIONAL PORTAL</text>
+
+    <!-- Nav Links Mock -->
+    <g transform="translate(350, 6)">
+      <text x="0" y="12" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Home</text>
+      <text x="45" y="12" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10" font-weight="600">About</text>
+      <text x="90" y="12" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Academics</text>
+      <text x="155" y="12" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Admissions</text>
+      <text x="230" y="12" fill="#10B981" font-family="system-ui, sans-serif" font-size="10" font-weight="700">Portal Login</text>
+    </g>
+  </g>
+
+  <!-- Hero Campus Showcase Banner -->
+  <g transform="translate(85, 155)">
+    <rect x="0" y="0" width="630" height="135" rx="12" fill="rgba(16, 185, 129, 0.12)" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1"/>
+    
+    <text x="24" y="38" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="20" font-weight="800">
+      Center of Academic &amp; Technological Excellence
+    </text>
+    <text x="24" y="62" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="11" font-weight="400">
+      Empowering future leaders through advanced degree programs, research innovation &amp; community service.
+    </text>
+
+    <!-- Action Buttons -->
+    <rect x="24" y="82" width="130" height="32" rx="6" fill="#10B981"/>
+    <text x="89" y="102" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="700" text-anchor="middle">Apply for Admission</text>
+
+    <rect x="164" y="82" width="110" height="32" rx="6" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="219" y="102" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Explore Programs</text>
+
+    <!-- Tech Stack Pill -->
+    <rect x="475" y="82" width="135" height="32" rx="6" fill="rgba(59, 130, 246, 0.15)" stroke="rgba(59, 130, 246, 0.3)" stroke-width="1"/>
+    <text x="542" y="102" fill="#60A5FA" font-family="system-ui, sans-serif" font-size="10" font-weight="600" text-anchor="middle">PHP • PDO • MySQL</text>
+  </g>
+
+  <!-- 3 Quick Access Cards -->
+  <g transform="translate(85, 305)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="198" height="125" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <circle cx="28" cy="28" r="14" fill="rgba(16, 185, 129, 0.2)"/>
+    <text x="28" y="32" fill="#10B981" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">🎓</text>
+    <text x="50" y="32" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Academics &amp; Colleges</text>
+    <text x="16" y="58" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10">Undergraduate &amp; graduate offerings in Computing, Sciences, and Arts.</text>
+    <text x="16" y="106" fill="#10B981" font-family="system-ui, sans-serif" font-size="10" font-weight="600">View Curriculum →</text>
+
+    <!-- Card 2 -->
+    <rect x="216" y="0" width="198" height="125" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <circle cx="244" cy="28" r="14" fill="rgba(59, 130, 246, 0.2)"/>
+    <text x="244" y="32" fill="#3B82F6" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">🏛️</text>
+    <text x="266" y="32" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Student Services</text>
+    <text x="232" y="58" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10">Registrar, library clearance, student organizations, and campus news.</text>
+    <text x="232" y="106" fill="#3B82F6" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Portal Access →</text>
+
+    <!-- Card 3 -->
+    <rect x="432" y="0" width="198" height="125" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <circle cx="460" cy="28" r="14" fill="rgba(245, 158, 11, 0.2)"/>
+    <text x="460" y="32" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="12" font-weight="700" text-anchor="middle">⚙️</text>
+    <text x="482" y="32" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Admin CMS System</text>
+    <text x="448" y="58" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="10">Custom PHP back-office for publishing news, events, and announcements.</text>
+    <text x="448" y="106" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Admin Login →</text>
+  </g>
+</svg>
