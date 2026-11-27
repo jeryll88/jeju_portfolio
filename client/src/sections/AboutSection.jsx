@@ -1,37 +1,17 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Globe, Smartphone, Sparkles, FolderGit2, Award, ArrowRight, Mail } from 'lucide-react';
-import api from '../services/api';
+import { PROFILE, ABOUT, PROJECTS, AWARDS } from '../data/portfolio';
 import TechOrbit from '../components/TechOrbit';
 import { useTheme } from '../hooks/useTheme';
 
-const DEFAULT_BIO = `I am a fourth-year Bachelor of Science in Information Technology student with a strong interest in creating websites and mobile applications. I enjoy turning ideas into practical digital experiences by combining creativity, problem-solving, and technical skills.
-
-I am always eager to explore new technologies, experiment with different development tools, and challenge myself through hands-on projects. My goal is to continuously improve my skills and create applications that are useful, accessible, and meaningful to users.`;
-
 export default function AboutSection() {
   const { isDark } = useTheme();
-  const [about, setAbout] = useState(null);
-  const [profile, setProfile] = useState(null);
-  const [stats, setStats] = useState({ projects: 3, certificates: 4 });
-
-  useEffect(() => {
-    api.about.get().then((r) => setAbout(r.data?.about)).catch(() => {});
-    api.profile.get().then((r) => setProfile(r.data?.profile)).catch(() => {});
-
-    // Fetch live statistics for projects and certificates
-    Promise.all([
-      api.projects.getPublished().catch(() => ({ data: { projects: [] } })),
-      api.awards.getPublished().catch(() => ({ data: { awards: [] } })),
-    ]).then(([projRes, awardRes]) => {
-      const pCount = projRes.data?.projects?.length || 0;
-      const aCount = awardRes.data?.awards?.length || 0;
-      setStats({
-        projects: pCount > 0 ? pCount : 3,
-        certificates: aCount > 0 ? aCount : 4,
-      });
-    }).catch(() => {});
-  }, []);
+  const about = ABOUT;
+  const profile = PROFILE;
+  const stats = {
+    projects: PROJECTS.length,
+    certificates: AWARDS.length,
+  };
 
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 
@@ -131,7 +111,7 @@ export default function AboutSection() {
 
             {/* Biography Card */}
             <div className="glass bg-white dark:bg-[#111827]/80 border border-slate-200/90 dark:border-white/10 p-6 sm:p-7 rounded-2xl shadow-sm dark:shadow-none space-y-4">
-              {(about?.biography || DEFAULT_BIO).split('\n\n').map((paragraph, index) => (
+              {about.biography.split('\n\n').map((paragraph, index) => (
                 <p key={index} className="theme-text-secondary leading-relaxed text-sm sm:text-base">
                   {paragraph}
                 </p>

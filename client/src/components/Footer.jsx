@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
 import { Github, Linkedin, Facebook, Mail, ExternalLink } from 'lucide-react';
-import api from '../services/api';
+import { SITE_SETTINGS, SOCIAL_LINKS } from '../data/portfolio';
 
 const ICON_MAP = {
   github: Github,
@@ -10,13 +9,8 @@ const ICON_MAP = {
 };
 
 export default function Footer() {
-  const [settings, setSettings] = useState(null);
-  const [socials, setSocials] = useState([]);
-
-  useEffect(() => {
-    api.settings.get().then((r) => setSettings(r.data.settings)).catch(() => {});
-    api.socialLinks.getAll().then((r) => setSocials(r.data.socialLinks || [])).catch(() => {});
-  }, []);
+  const settings = SITE_SETTINGS;
+  const socials = SOCIAL_LINKS;
 
   const scrollTo = (id) => {
     const el = document.getElementById(id);

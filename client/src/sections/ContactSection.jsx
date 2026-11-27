@@ -1,22 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Mail, Phone, Github, Linkedin, Facebook, ExternalLink, MapPin } from 'lucide-react';
 import toast from 'react-hot-toast';
-import api from '../services/api';
+import { PROFILE, SOCIAL_LINKS } from '../data/portfolio';
 
 const SOCIAL_ICONS = { github: Github, linkedin: Linkedin, facebook: Facebook, email: Mail };
 
 export default function ContactSection() {
-  const [profile, setProfile] = useState(null);
-  const [socials, setSocials] = useState([]);
+  const profile = PROFILE;
+  const socials = SOCIAL_LINKS;
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
-
-  useEffect(() => {
-    api.profile.get().then((r) => setProfile(r.data.profile)).catch(() => {});
-    api.socialLinks.getAll().then((r) => setSocials(r.data.socialLinks || [])).catch(() => {});
-  }, []);
 
   const validate = () => {
     const errs = {};
@@ -29,20 +24,20 @@ export default function ContactSection() {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
-    try {
-      await api.contact.submit(form);
-      toast.success('Message sent successfully!');
-      setForm({ name: '', email: '', subject: '', message: '' });
-      setErrors({});
-    } catch (err) {
-      toast.error(err.response?.data?.error || 'Failed to send message');
-    } finally {
-      setLoading(false);
-    }
+    const recipient = profile.email || 'jeryllanne88@gmail.com';
+    const mailtoSubject = encodeURIComponent(form.subject);
+    const mailtoBody = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
+    );
+    window.location.href = `mailto:${recipient}?subject=${mailtoSubject}&body=${mailtoBody}`;
+    toast.success('Opening your email client to send message!');
+    setForm({ name: '', email: '', subject: '', message: '' });
+    setErrors({});
+    setLoading(false);
   };
 
   const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };

@@ -1,16 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Award, Calendar, Building2, ExternalLink } from 'lucide-react';
-import api from '../services/api';
+import { AWARDS } from '../data/portfolio';
 import CertificateModal from '../components/CertificateModal';
 
 export default function AwardsSection() {
-  const [awards, setAwards] = useState([]);
+  const awards = AWARDS;
   const [selected, setSelected] = useState(null);
-
-  useEffect(() => {
-    api.awards.getPublished().then((r) => setAwards(r.data.awards || [])).catch(() => { });
-  }, []);
 
   const fadeUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } };
 

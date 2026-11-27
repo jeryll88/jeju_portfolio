@@ -1,21 +1,12 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
-import api from '../services/api';
+import { SKILL_CATEGORIES } from '../data/portfolio';
 import TechLogo from '../components/TechLogo';
 import { useTheme } from '../hooks/useTheme';
 
 export default function SkillsSection() {
-  const [categories, setCategories] = useState([]);
+  const categories = SKILL_CATEGORIES;
   const { isDark } = useTheme();
-
-  useEffect(() => {
-    api.skills.getPublished()
-      .then((r) => {
-        setCategories(r.data.categories || []);
-      })
-      .catch(() => {});
-  }, []);
 
   const fadeUp = {
     hidden: { opacity: 0, y: 25 },

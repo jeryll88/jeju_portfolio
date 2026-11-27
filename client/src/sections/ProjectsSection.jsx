@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ExternalLink, Github, Sparkles } from 'lucide-react';
-import api from '../services/api';
+import { PROJECTS } from '../data/portfolio';
 import ProjectModal from '../components/ProjectModal';
 
 export default function ProjectsSection() {
-  const [projects, setProjects] = useState([]);
+  const projects = PROJECTS;
   const [selectedProject, setSelectedProject] = useState(null);
   const isAutoScrolling = true;
 
@@ -18,12 +18,6 @@ export default function ProjectsSection() {
   const hasDragged = useRef(false);
   const isHovered = useRef(false);
   const animFrameId = useRef(null);
-
-  useEffect(() => {
-    api.projects.getPublished().then((r) => {
-      setProjects(r.data?.projects || []);
-    }).catch(() => {});
-  }, []);
 
   // Ensure base has at least 4 items so that wide screens have sufficient cards
   const baseList = useMemo(() => {

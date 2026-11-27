@@ -1,22 +1,17 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Download, ArrowRight, Github, Linkedin, Facebook, Mail, ExternalLink } from 'lucide-react';
-import api from '../services/api';
+import { PROFILE, SOCIAL_LINKS } from '../data/portfolio';
 
 const SOCIAL_ICONS = { github: Github, linkedin: Linkedin, facebook: Facebook, email: Mail };
 
 export default function HeroSection() {
-  const [profile, setProfile] = useState(null);
-  const [socials, setSocials] = useState([]);
+  const profile = PROFILE;
+  const socials = SOCIAL_LINKS;
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
   const fullName = (profile?.fullName || 'JERYLL ANNE BIDES').toUpperCase();
-
-  useEffect(() => {
-    api.profile.get().then((r) => setProfile(r.data.profile)).catch(() => { });
-    api.socialLinks.getAll().then((r) => setSocials(r.data.socialLinks || [])).catch(() => { });
-  }, []);
 
   useEffect(() => {
     let timeout;
